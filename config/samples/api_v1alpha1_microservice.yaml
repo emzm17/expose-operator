@@ -1,0 +1,12 @@
+apiVersion: api.example.com/v1alpha1
+kind: Microservice
+metadata:
+  labels:
+    app.kubernetes.io/name: expose-operator-sdk
+    app.kubernetes.io/managed-by: kustomize
+  name: microservice-sample
+spec:
+  image: nginx:latest
+  replicas: 1
+  port: 80
+  targetport: 8080

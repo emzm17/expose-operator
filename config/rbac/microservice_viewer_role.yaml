@@ -1,0 +1,23 @@
+# permissions for end users to view microservices.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: expose-operator-sdk
+    app.kubernetes.io/managed-by: kustomize
+  name: microservice-viewer-role
+rules:
+- apiGroups:
+  - api.example.com
+  resources:
+  - microservices
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - api.example.com
+  resources:
+  - microservices/status
+  verbs:
+  - get
